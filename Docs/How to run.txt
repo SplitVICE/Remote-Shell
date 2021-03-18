@@ -1,0 +1,7 @@
+Go to .env and change PORT to desired port.
+Change TEST_MODE=TRUE to TEST_MODE=FALSE if the case.
+
+Open terminal on project and run the following on a shell:
+
+npm i
+npm start
