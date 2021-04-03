@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.png">
+    <title>Remote Shell - By JUST VICE</title>
+
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="./external/bootstrap.5.0.0-beta2.min.css">
     <script src="./external/bootstrap.5.0.0-beta2.min.js"></script>
@@ -9,22 +15,66 @@
     <!-- SWEETALERT2 -->
     <script src="./external/sweetalert2.all.min.js"></script>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="./img/favicon.png">
-    <title>Remote Shell - BY JUST VICE</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
+
     <div class="container mt-5">
 
-        <h1>Remote Shell</h1>
-        <button class='btn btn-primary btn-sm mt-3' id='btn_shutdown'>Turn off</button>
+        <div class='h1'>Remote Shell <span class='title__vice'>By <a href="http://just-vice.com/s/twitter"
+                    target="_blank">JUST VICE</a></span></div>
+
+        Dark mode
+        <input type="checkbox" id="checkbox__darkmode" checked>
+
+        <hr>
+
         <div id="message"></div>
 
-        <script src="script.js"></script>
+        <div class="h5">Direct actions</div>
+
+        <button class='btn btn-primary btn-sm mt-3' id='btn__shutdown'>Turn off PC</button>
+
+        <button class='btn btn-primary btn-sm mt-3' id='btn__restart'>Restart PC</button>
+
+        <button class='btn btn-primary btn-sm mt-3 invisible' id='btn__cachona'>Play La Cachona</button>
+
+        <hr>
+
+        <div class="h5">Terminal instructions sending</div>
+        <div class="form-group">
+            <textarea class="form-control" id="textarea__cmd" rows="3" placeholder="Terminal instructions"></textarea>
+            <button class='btn btn-primary btn-sm mt-3' id='btn__cmd'>Send terminal instructions</button>
+            <button class='btn btn-primary btn-sm mt-3' id='btn__cmdClear'>Clear</button>
+        </div>
+
     </div>
+
+    <div class='footer__top'></div>
+
+    <footer>
+        <div class="h5 footer__content">
+            © MIT
+            -
+            <a href="http://just-vice.com/technology/web-software/remote-shell/" target="_blank">Official website</a>
+            -
+            <a href="https://github.com/JustVice/Remote-Shell" target="_blank">Github repository</a>
+            -
+            v1.0.0
+        </div>
+    </footer>
+
+    <div id='inki__div'></div>
+
+    <h1 class='invisible'>Remote Shell - By JUST VICE</h1>
+
+    <div id='div__style'>
+        <link rel="stylesheet" href="./css/style__dark.css">
+    </div>
+    <script src="script.js"></script>
+
 </body>
 
 </html>

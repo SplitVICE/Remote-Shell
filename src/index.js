@@ -1,8 +1,34 @@
-const app = require('./server');
-app.listen(app.get('port'), () => {
-    const output_message =
-        `Server running on port ${app.get('port')}
-Visit localhost:${app.get('port')} on Internet browser to use the web application
-`;
-    console.log(output_message);
-});
+async function main() {
+    try {
+        const Console_OutPuts = require('./libs/Console_OutPuts');
+        const localIpV4Address = require("local-ipv4-address");
+        const IPv4 = await localIpV4Address();
+        const app = require('./server');
+        const port = app.get('port');
+        const Console_OutPuts_ = new Console_OutPuts(IPv4, port);
+
+        app.listen(port, () => {
+            console.log(Console_OutPuts_.init__output());
+
+            // Auto starts the application on browser.
+            if (require('./config/env').TEST_MODE == 'FALSE') {
+                const openApp = require('./libs/openApp');
+                openApp(IPv4 + ':' + app.get('port'));
+            }
+        });
+
+
+    } catch (error) {
+        console.log(error + `
+-----------------------
+Han error has happened.
+-----------------------
+Dependencies might not been installed. Please, run Install dependencies.bat file to install dependencies.
+If the problem persists, contact support.
+`);
+        setTimeout(() => {
+        }, 60000);
+    }
+}
+
+main();

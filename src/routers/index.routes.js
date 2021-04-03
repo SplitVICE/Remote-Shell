@@ -6,6 +6,6 @@ const controller_router_index = require('../controller/controller.router.index')
 router.get('/', controller_router_index.index);
 
 // Receives requests to execute commands.
-router.post('/api/service', controller_router_index.service_post);
+router.post('/api/service', controller_router_index.service__post);
 
 module.exports = router;

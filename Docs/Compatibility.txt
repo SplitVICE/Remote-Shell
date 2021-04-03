@@ -1,1 +1,2 @@
 Node version: tested and working on v12.16.2
+Tested and works on Windows 10.

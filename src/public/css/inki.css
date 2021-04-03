@@ -1,0 +1,9 @@
+.inki{position:fixed;height:650px;bottom:0;right:0;transform:translate(90px, 90px);}
+.inki--animation--in{animation:inki--animation--in 0.3s ease-in forwards;}
+@keyframes inki--animation--in{0%{transform:translate(450px, 450px);}
+ 70%{transform:translate(0px, 0px);}
+}
+.inki--animation--out{animation:inki--animation--out 0.3s ease-in forwards;}
+@keyframes inki--animation--out{0%{transform:translate(0px, 0px);}
+ 100%{transform:translate(580px, 580px);}
+}

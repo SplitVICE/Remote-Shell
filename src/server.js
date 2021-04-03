@@ -8,7 +8,7 @@ app.set("port", config_env.PORT);
 app.use(express.static(path.join(__dirname, "public"))); // Public files.
 
 // Middlewares
-app.use(express.json()); // Server understands JSON requests.
+app.use(express.json()); // Server understands JSON on requests.
 
 // Routes
 app.use(require("./routers/index.routes"));

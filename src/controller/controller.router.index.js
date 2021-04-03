@@ -10,26 +10,27 @@ controller_router_index.index = (req, res) => {
 
 /**
  * Executes CMD processes.
- * @param { Express request object } req Brings actions to execute.
  * @param { String } req.body.action action parameter to execute.
+ * @param { String } req.body.instructions MsDOS instructions.
  */
-controller_router_index.service_post = (req, res) => {
+controller_router_index.service__post = (req, res) => {
     if (req.body.action == undefined)
         res.json({ status: 'failed', description: 'missing required parameters' });
 
-    const result = execute_action(req.body.action);
+    const result = execute_action(req.body);
 
     res.json(result);
 };
 
 /**
  * Handles the action to take on the PC.
- * @param { String } action action parameter instruction.
+ * @param { String } body.action action parameter instruction.
+ * @param { String } body.instructions console instructions if body.action == 'cmd'.
  * @returns @param { Object } JSObject returns a JavaScript object
  * which will be send to the client on res.json();
  */
-function execute_action(action) {
-    switch (action) {
+function execute_action(body) {
+    switch (body.action) {
         case 'shutdown':
 
             if (config_env.TEST_MODE == 'FALSE') {
@@ -40,6 +41,27 @@ function execute_action(action) {
                 console.log('Test mode is activated');
                 return { status: 'failed', description: 'test mode activated' };
             }
+
+        case 'restart':
+
+            if (config_env.TEST_MODE == 'FALSE') {
+                exec('shutdown -r -t 1'); // CMD execution command.
+                return { status: 'success', description: 'action executed' };
+            }
+            else {
+                console.log('Test mode is activated');
+                return { status: 'failed', description: 'test mode activated' };
+            }
+
+        case 'la cachona':
+
+            exec('explorer "https://youtu.be/JYgmLuXnENk?t=103"'); // CMD execution command.
+            return { status: 'success', description: 'action executed' };
+
+        case 'cmd':
+
+            exec(body.instructions); // CMD execution command.
+            return { status: 'success', description: 'action executed' };
 
         default:
             break;
