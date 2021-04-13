@@ -11,7 +11,8 @@ async function main() {
             console.log(Console_OutPuts_.init__output());
 
             // Auto starts the application on browser.
-            if (require('./config/env').TEST_MODE == 'FALSE') {
+            const env_config = require('./config/env');
+            if (env_config.OPEN_ON_BROWSER_AUTOMATICALLY == 'TRUE') {
                 const openApp = require('./libs/openApp');
                 openApp(IPv4 + ':' + app.get('port'));
             }
