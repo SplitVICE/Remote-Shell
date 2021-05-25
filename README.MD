@@ -1,9 +1,9 @@
-[![N|Solid](https://dl.dropboxusercontent.com/s/4rkbkdirpmjdc81/viceReadmeMDImage.png?dl=0)](http://just-vice.com)
+[![N|Solid](https://dl.dropboxusercontent.com/s/oy06v7r8d871cr8/splitvice-banner.png?dl=0)](http://split-vice.com)
 
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 # Description
 Remote Shell allows you to execute MsDOS commands on the computer that is serving the web application.
-[Oficial website](http://just-vice.com/technology/web-software/remote-shell/)
+[Oficial website](http://split-vice.com/technology/web-software/remote-shell/)
 
 ![Remote Shell demo](./src/public/img/demo.png)
 # Technical specs

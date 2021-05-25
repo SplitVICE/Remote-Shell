@@ -1,6 +1,6 @@
 {
   "name": "remote-shell",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "NodeJS http server to execute shell operations on the PC.",
   "main": "/src/index.js",
   "scripts": {
@@ -9,10 +9,10 @@
   },
   "keywords": [
     "NODEJS",
-    "JUST VICE",
+    "SPLIT VICE",
     "REMOTE SHELL"
   ],
-  "author": "JUST VICE",
+  "author": "SPLIT VICE",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^8.2.0",
